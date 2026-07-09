@@ -1,0 +1,28 @@
+.loading-container {
+  max-width: 500px;
+  margin: 6rem auto;
+  text-align: center;
+}
+
+.loading-container h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+#target-display {
+  color: var(--text-secondary);
+  word-break: break-all;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.error-box strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.btn-retry {
+  display: none;
+  margin-top: 1rem;
+}

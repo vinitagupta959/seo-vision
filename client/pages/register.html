@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | SEO Vision - Auditing Platform</title>
+  <meta name="description" content="Create an account on SEO Vision to get detailed page audits, search history reports, and speed metrics.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components/navbar.css">
+  <link rel="stylesheet" href="/assets/css/components/buttons.css">
+  <link rel="stylesheet" href="/assets/css/components/cards.css">
+  <link rel="stylesheet" href="/assets/css/components/forms.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header>
+    <div class="logo-container">
+      <a href="/" class="logo-container">
+        <span class="logo-icon">👁</span>
+        <span class="logo-text">SEO Vision</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <button id="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+    </div>
+  </header>
+
+  <!-- Register Main Panel -->
+  <main class="auth-container">
+    <div class="glass-panel fade-in">
+      <h1 class="form-title">Get Started</h1>
+      <p class="form-subtitle">Create your account to start auditing websites</p>
+
+      <form id="register-form">
+        <div class="form-group">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" id="name" class="form-control" placeholder="John Doe" required maxlength="50">
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required minlength="8">
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password" class="form-label">Confirm Password</label>
+          <input type="password" id="confirm-password" class="form-control" placeholder="••••••••" required minlength="8">
+        </div>
+
+        <button type="submit" class="btn-submit" id="submit-btn">Create Account</button>
+      </form>
+
+      <div class="form-footer">
+        Already have an account? <a href="/pages/login.html">Log in here</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script setup -->
+  <script type="module" src="/assets/js/ui.js"></script>
+  <script type="module" src="/assets/js/pages/register.js"></script>
+</body>
+</html>

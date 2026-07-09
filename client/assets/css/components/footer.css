@@ -1,0 +1,9 @@
+footer {
+  border-top: 1px solid var(--border-glass);
+  background: var(--bg-glass);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--text-secondary);
+}

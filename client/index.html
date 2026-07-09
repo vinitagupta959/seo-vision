@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Vision – Website SEO Analysis and Performance Audit Platform</title>
+  <meta name="description" content="SEO Vision is a website SEO auditing platform. Audit page content, technical headers, Core Web Vitals performance, backlinks, and image alt text for free.">
+  <link class="page-style" rel="stylesheet" href="/assets/css/style.css">
+  <link class="page-style" rel="stylesheet" href="/assets/css/components/navbar.css">
+  <link class="page-style" rel="stylesheet" href="/assets/css/components/footer.css">
+  <link class="page-style" rel="stylesheet" href="/assets/css/components/buttons.css">
+  <link class="page-style" rel="stylesheet" href="/assets/css/components/cards.css">
+  <link class="page-style" rel="stylesheet" href="/assets/css/pages/landing.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header>
+    <div class="logo-container">
+      <a href="/" class="logo-container">
+        <span class="logo-icon"><i class="fa-solid fa-eye"></i></span>
+        <span class="logo-text">SEO Vision</span>
+      </a>
+    </div>
+    <div class="nav-links" id="auth-nav-links">
+      <!-- Loading links -->
+    </div>
+    <div class="flex-row">
+      <button id="theme-toggle-btn" aria-label="Toggle Theme"></button>
+    </div>
+  </header>
+
+  <!-- Hero Content -->
+  <section class="hero fade-in">
+    <h1>Supercharge Your Website's Search Visibility</h1>
+    <p>Audit page content, technical schemas, response speeds, broken backlinks, and images. Get dynamic reports with Lighthouse timings, custom performance scores, and exportable PDFs.</p>
+    <div class="cta-buttons">
+      <a href="/pages/register.html" class="nav-btn nav-btn-primary btn-lg">Get Started Free</a>
+      <a href="#how-it-works" class="nav-btn nav-btn-outline btn-lg">See How It Works</a>
+    </div>
+  </section>
+
+  <div class="main-wrapper">
+    
+    <!-- Features -->
+    <section id="features">
+      <h2 class="section-title">Core Audit Elements</h2>
+      <div class="features-grid">
+        <div class="feature-card glass-panel">
+          <div class="feature-icon"><i class="fa-regular fa-file-code"></i></div>
+          <h3>Basic Meta Scoping</h3>
+          <p>Scan titles, meta descriptions, mobile viewports, charset configurations, and header structures for alignment.</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Technical Compliance</h3>
+          <p>Verify SSL certificate validations, HTTPS, XML sitemaps, robots.txt crawl configurations, and standard security headers.</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Performance Timings</h3>
+          <p>Retrieve detailed connection latencies, DOM sizes, and performance timing arrays directly from rendered environments.</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <h3>Content & Readability</h3>
+          <p>Assess text readability indexes, visible word count metrics, and extract top-density keywords.</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon"><i class="fa-solid fa-link"></i></div>
+          <h3>Hyperlink Checks</h3>
+          <p>Index internal/external anchors, check link ratios, and detect broken HTTP redirects.</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon"><i class="fa-solid fa-sitemap"></i></div>
+          <h3>Semantic Structured Data</h3>
+          <p>Scan JSON-LD schemas, Microdata, Open Graph tags, and Twitter Cards to confirm rich snippet suitability.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how-it-works">
+      <h2 class="section-title">Workflow Execution</h2>
+      <div class="steps-container">
+        <div class="step-card glass-panel">
+          <div class="step-number">01</div>
+          <h3>Input URL</h3>
+          <p>Submit your landing page link to analyze.</p>
+        </div>
+        <div class="step-card glass-panel">
+          <div class="step-number">02</div>
+          <h3>Headless Scrape</h3>
+          <p>Puppeteer renders scripts and reads the dynamic DOM.</p>
+        </div>
+        <div class="step-card glass-panel">
+          <div class="step-number">03</div>
+          <h3>Cheerio Auditing</h3>
+          <p>Extract tags, headings, content parameters, and schemas.</p>
+        </div>
+        <div class="step-card glass-panel">
+          <div class="step-number">04</div>
+          <h3>Generate Report</h3>
+          <p>Get score gauges, priority lists, and downloadable PDFs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Used -->
+    <section id="technology">
+      <h2 class="section-title">Platform Architecture</h2>
+      <div class="tech-grid">
+        <span class="tech-badge"><i class="fa-brands fa-node-js text-success"></i> Node.js</span>
+        <span class="tech-badge"><i class="fa-solid fa-bolt text-warning"></i> Express.js</span>
+        <span class="tech-badge"><i class="fa-solid fa-spider"></i> Puppeteer</span>
+        <span class="tech-badge"><i class="fa-solid fa-code"></i> Cheerio</span>
+        <span class="tech-badge"><i class="fa-solid fa-leaf text-success"></i> MongoDB Atlas</span>
+        <span class="tech-badge"><i class="fa-solid fa-key"></i> JWT Authentication</span>
+        <span class="tech-badge"><i class="fa-solid fa-palette text-primary"></i> Vanilla CSS</span>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <h2 class="section-title">What Users Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card glass-panel">
+          <p>"The PDF export feature is incredible. We run weekly audits on client landing pages and print reports with professional styling and exact scores in seconds."</p>
+          <div class="testimonial-author">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" class="avatar-sm" alt="Sarah">
+            <div>
+              <div class="testimonial-name">Sarah Connor</div>
+              <div class="testimonial-title">Lead SEO Director</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass-panel">
+          <p>"Using Puppeteer to scrape rendered client pages means we get exact readings of React/Vue layouts, which standard scrapers miss completely. Lifesaver."</p>
+          <div class="testimonial-author">
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus" class="avatar-sm" alt="Marcus">
+            <div>
+              <div class="testimonial-name">Marcus Vance</div>
+              <div class="testimonial-title">Senior Web Architect</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item glass-panel">
+          <div class="faq-question">
+            <span>How does the website analysis engine work?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            SEO Vision launches an isolated Chrome container in headless mode using Puppeteer. It loads the target URL, waits for all Javascript frameworks (like React, Angular, or Vue) to render, and captures the final generated HTML. This HTML is parsed using Cheerio to evaluate tags, contents, and schemas.
+          </div>
+        </div>
+        <div class="faq-item glass-panel">
+          <div class="faq-question">
+            <span>Do I need to pay for Google Lighthouse APIs?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            No! The platform operates entirely on open-source libraries. We measure connection performance, DOM sizes, and semantic SEO parameters directly using custom modules without relying on any paid third-party APIs.
+          </div>
+        </div>
+        <div class="faq-item glass-panel">
+          <div class="faq-question">
+            <span>Are PDF downloads styled?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Yes! The PDF generation tool runs Chrome's native print engine in the background to capture the report dashboard with exact CSS variables, colors, tables, and glassmorphic panels.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 SEO Vision Platform. Built with Vanilla JS & Express. All rights reserved.</p>
+  </footer>
+
+  <!-- Script setup -->
+  <script type="module" src="/assets/js/ui.js"></script>
+  <script type="module" src="/assets/js/pages/landing.js"></script>
+</body>
+</html>

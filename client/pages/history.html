@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit History | SEO Vision</title>
+  <meta name="description" content="Manage and filter your previous website audits and performance reports.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components/navbar.css">
+  <link rel="stylesheet" href="/assets/css/components/buttons.css">
+  <link rel="stylesheet" href="/assets/css/components/cards.css">
+  <link rel="stylesheet" href="/assets/css/components/forms.css">
+  <link rel="stylesheet" href="/assets/css/components/tables.css">
+  <link rel="stylesheet" href="/assets/css/pages/history.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header>
+    <div class="logo-container">
+      <a href="/pages/dashboard.html" class="logo-container">
+        <span class="logo-icon">👁</span>
+        <span class="logo-text">SEO Vision</span>
+      </a>
+    </div>
+    <div class="nav-links" id="auth-nav-links">
+      <!-- Rendered dynamically by ui.js -->
+    </div>
+    <div>
+      <button id="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+    </div>
+  </header>
+
+  <!-- History Dashboard -->
+  <main class="main-wrapper">
+    <div class="glass-panel fade-in">
+      <a href="/pages/dashboard.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+      <h1 class="history-header-title">Analysis Log</h1>
+      <p class="history-header-desc">Manage and search through your previous website SEO audit reports.</p>
+
+      <!-- Search, status and sorting filters -->
+      <div class="history-controls">
+        <input type="text" id="search-input" class="form-control" placeholder="Search audited URL...">
+        
+        <select id="status-filter" class="form-control">
+          <option value="">All Statuses</option>
+          <option value="completed">Completed</option>
+          <option value="failed">Failed</option>
+          <option value="running">Running</option>
+        </select>
+
+        <select id="sort-filter" class="form-control">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="score_desc">Highest Score</option>
+        </select>
+      </div>
+
+      <!-- History Table Container -->
+      <div class="desktop-only-table">
+        <div class="table-container">
+          <table id="history-table">
+            <thead>
+              <tr>
+                <th>Audited Website URL</th>
+                <th>Overall Score</th>
+                <th>Status</th>
+                <th>Audited On</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="history-list">
+              <tr>
+                <td colspan="5" class="text-center text-muted">Loading audit history...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mobile-only-cards" id="mobile-history-list">
+        <div class="table-empty">Loading audit history...</div>
+      </div>
+
+      <!-- Pagination Footer -->
+      <div class="pagination">
+        <button id="prev-btn" class="pagination-btn" disabled>← Previous</button>
+        <span id="pagination-status" class="pagination-info">Page 1 of 1</span>
+        <button id="next-btn" class="pagination-btn" disabled>Next →</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script setup -->
+  <script type="module" src="/assets/js/ui.js"></script>
+  <script type="module" src="/assets/js/pages/history.js"></script>
+</body>
+</html>

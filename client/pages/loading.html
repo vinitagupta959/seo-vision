@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyzing Website... | SEO Vision</title>
+  <meta name="description" content="Please wait while we run technical audits and performance timing checks.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components/navbar.css">
+  <link rel="stylesheet" href="/assets/css/components/buttons.css">
+  <link rel="stylesheet" href="/assets/css/components/cards.css">
+  <link rel="stylesheet" href="/assets/css/components/loader.css">
+  <link rel="stylesheet" href="/assets/css/pages/loading.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo-container">
+      <a href="/pages/dashboard.html" class="logo-container">
+        <span class="logo-icon">👁</span>
+        <span class="logo-text">SEO Vision</span>
+      </a>
+    </div>
+    <div class="nav-links" id="auth-nav-links"></div>
+  </header>
+
+  <!-- Main container -->
+  <main class="loading-container">
+    <div class="glass-panel fade-in">
+      <div id="loader-graphic" class="spinner-ring"></div>
+      
+      <h1 id="loading-title">Auditing Website</h1>
+      <p id="target-display"></p>
+
+      <!-- Checklist items -->
+      <div id="status-checklist" class="status-list">
+        <div class="status-item status-active" id="step-connect">
+          <span class="status-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+          <span>Connecting to website...</span>
+        </div>
+        <div class="status-item status-pending" id="step-crawl">
+          <span class="status-icon"><i class="fa-regular fa-circle"></i></span>
+          <span>Headless browser rendering...</span>
+        </div>
+        <div class="status-item status-pending" id="step-cheerio">
+          <span class="status-icon"><i class="fa-regular fa-circle"></i></span>
+          <span>Auditing semantic HTML...</span>
+        </div>
+        <div class="status-item status-pending" id="step-score">
+          <span class="status-icon"><i class="fa-regular fa-circle"></i></span>
+          <span>Calculating SEO rankings...</span>
+        </div>
+        <div class="status-item status-pending" id="step-save">
+          <span class="status-icon"><i class="fa-regular fa-circle"></i></span>
+          <span>Finalizing report...</span>
+        </div>
+      </div>
+
+      <!-- Error message reporting container -->
+      <div id="error-message-box" class="error-box">
+        <strong>Analysis Failed</strong>
+        <span id="error-details"></span>
+      </div>
+
+      <a href="/pages/dashboard.html" id="btn-back" class="nav-btn nav-btn-primary btn-retry">Back to Dashboard</a>
+    </div>
+  </main>
+
+  <!-- Script setup -->
+  <script type="module" src="/assets/js/ui.js"></script>
+  <script type="module" src="/assets/js/pages/loading.js"></script>
+</body>
+</html>

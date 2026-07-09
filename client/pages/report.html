@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Audit Report | SEO Vision</title>
+  <meta name="description" content="View detailed technical audit, page performance, and semantic SEO scores.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components/navbar.css">
+  <link rel="stylesheet" href="/assets/css/components/buttons.css">
+  <link rel="stylesheet" href="/assets/css/components/cards.css">
+  <link rel="stylesheet" href="/assets/css/components/charts.css">
+  <link rel="stylesheet" href="/assets/css/pages/report.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header>
+    <div class="logo-container">
+      <a href="/pages/dashboard.html" class="logo-container">
+        <span class="logo-icon">👁</span>
+        <span class="logo-text">SEO Vision</span>
+      </a>
+    </div>
+    <div class="nav-links" id="auth-nav-links">
+      <!-- Dynamically filled -->
+    </div>
+    <div>
+      <button id="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+    </div>
+  </header>
+
+  <!-- Report Panel wrapper -->
+  <main class="main-wrapper">
+    <div class="glass-panel fade-in">
+      
+      <!-- Top header panel with actions -->
+      <a href="/pages/dashboard.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+      <div class="report-header-panel">
+        <div>
+          <span class="priority-badge priority-low">Crawl Completed</span>
+          <h1 id="report-title-url">Loading Report...</h1>
+        </div>
+        <div class="report-actions">
+          <button id="print-btn" class="nav-btn nav-btn-outline"><i class="fa-solid fa-print"></i> Print Report</button>
+          <button id="download-pdf-btn" class="nav-btn nav-btn-primary"><i class="fa-solid fa-file-pdf"></i> Download PDF</button>
+        </div>
+      </div>
+
+      <!-- Overall Score Radial Panel -->
+      <div class="overall-section">
+        <div class="dial-container">
+          <div id="overall-dial" class="radial-dial">
+            <div class="radial-dial-inner">
+              <span id="overall-value" class="radial-value">-</span>
+              <span class="radial-label">Overall Score</span>
+            </div>
+          </div>
+        </div>
+        <div class="overall-details">
+          <h2>SEO Health Check</h2>
+          <p id="report-date"></p>
+          <p id="report-meta-desc"></p>
+          <div class="details-meta-row">
+            <span>🔒 HTTPS: <strong id="val-https">-</strong></span>
+            <span>⏱ Speed: <strong id="val-loadtime">-</strong></span>
+            <span>📂 DOM Size: <strong id="val-domsize">-</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories Progress Rings Grid -->
+      <div class="categories-grid" id="categories-list">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Recommendations Priority List -->
+      <div class="recs-section">
+        <h2>Action Items & Recommendations</h2>
+        <div id="recommendations-list">
+          <p class="text-muted">No recommendations needed! All audits passed.</p>
+        </div>
+      </div>
+
+      <!-- Detailed Audits Accordions -->
+      <div class="audits-section">
+        <h2>Detailed Audits</h2>
+        
+        <!-- Accordion 1: Meta Tags -->
+        <div class="accordion-item active">
+          <button class="accordion-trigger">
+            <span>Meta Information Audits</span>
+            <span>▲</span>
+          </button>
+          <div class="accordion-content">
+            <div class="audit-grid" id="audit-meta-grid"></div>
+          </div>
+        </div>
+
+        <!-- Accordion 2: Technical -->
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span>Technical SEO Audits</span>
+            <span>▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="audit-grid" id="audit-tech-grid"></div>
+          </div>
+        </div>
+
+        <!-- Accordion 3: Content -->
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span>Content & Keyword Audits</span>
+            <span>▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="audit-grid" id="audit-content-grid"></div>
+          </div>
+        </div>
+
+        <!-- Accordion 4: Links & Images -->
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span>Images & Hyperlinks Audits</span>
+            <span>▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="audit-grid" id="audit-links-grid"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Script setup -->
+  <script type="module" src="/assets/js/ui.js"></script>
+  <script type="module" src="/assets/js/pages/report.js"></script>
+</body>
+</html>

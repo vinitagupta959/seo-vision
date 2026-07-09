@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | SEO Vision</title>
+  <meta name="description" content="Access your SEO Vision dashboard, audit new websites, and track historical page performance scores.">
+  <link class="sheet" rel="stylesheet" href="/assets/css/style.css">
+  <link class="sheet" rel="stylesheet" href="/assets/css/components/navbar.css">
+  <link class="sheet" rel="stylesheet" href="/assets/css/components/buttons.css">
+  <link class="sheet" rel="stylesheet" href="/assets/css/components/cards.css">
+  <link class="sheet" rel="stylesheet" href="/assets/css/components/forms.css">
+  <link class="sheet" rel="stylesheet" href="/assets/css/components/charts.css">
+  <link class="sheet" rel="stylesheet" href="/assets/css/pages/dashboard.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header>
+    <div class="logo-container">
+      <a href="/pages/dashboard.html" class="logo-container">
+        <span class="logo-icon">👁</span>
+        <span class="logo-text">SEO Vision</span>
+      </a>
+    </div>
+    <div class="nav-links" id="auth-nav-links">
+      <!-- Dynamically rendered -->
+    </div>
+    <div>
+      <button id="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+    </div>
+  </header>
+
+  <!-- Dashboard Content -->
+  <main class="main-wrapper">
+    <div class="fade-in">
+      
+      <!-- Quick Analyze + Chart Row -->
+      <div class="panel-row">
+        <!-- Quick Form panel -->
+        <div class="glass-panel quick-analyze-panel">
+          <h2>Audit a New Website</h2>
+          <p>Enter a website domain or absolute URL address. Our engine will crawl pages, render Javascript elements, run performance audits, and generate reports.</p>
+          
+          <form id="analyze-form" class="quick-form">
+            <input type="text" id="target-url" class="form-control" placeholder="example.com" required>
+            <button type="submit" class="btn-submit" id="analyze-submit-btn"><i class="fa-solid fa-magnifying-glass"></i> Run Audit</button>
+          </form>
+        </div>
+
+        <!-- Chart panel -->
+        <div class="glass-panel chart-panel">
+          <h3>Category Averages</h3>
+          <div class="chart-container">
+            <canvas id="average-chart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="dashboard-grid">
+        <div class="glass-panel stat-card">
+          <div class="stat-card-header">
+            <span class="stat-title">Total Analyses Run</span>
+            <i class="fa-solid fa-chart-bar text-primary"></i>
+          </div>
+          <span class="stat-value" id="stat-total-audits">-</span>
+        </div>
+        <div class="glass-panel stat-card">
+          <div class="stat-card-header">
+            <span class="stat-title">Average SEO Score</span>
+            <i class="fa-solid fa-circle-nodes text-success"></i>
+          </div>
+          <span class="stat-value" id="stat-avg-seo">-</span>
+        </div>
+        <div class="glass-panel stat-card">
+          <div class="stat-card-header">
+            <span class="stat-title">Performance Average</span>
+            <i class="fa-solid fa-gauge-high text-warning"></i>
+          </div>
+          <span class="stat-value" id="stat-avg-perf">-</span>
+        </div>
+      </div>
+
+      <!-- Recent Activity Table -->
+      <div class="glass-panel recent-audits-panel">
+        <h2>Recent Audits</h2>
+        <div class="desktop-only-table">
+          <div class="recent-table-container">
+            <table class="recent-table">
+              <thead>
+                <tr>
+                  <th>Website URL</th>
+                  <th>Overall Score</th>
+                  <th>Status</th>
+                  <th>Audited On</th>
+                  <th class="text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody id="recent-audits-list">
+                <tr>
+                  <td colspan="5" class="text-center text-muted">Loading recent activities...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="mobile-only-cards" id="mobile-recent-list">
+          <div class="table-empty">Loading recent activities...</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script type="module" src="/assets/js/ui.js"></script>
+  <script type="module" src="/assets/js/pages/dashboard.js"></script>
+</body>
+</html>

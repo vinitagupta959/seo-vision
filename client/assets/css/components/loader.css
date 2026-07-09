@@ -1,0 +1,75 @@
+.spinner-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid var(--border-glass);
+  border-top-color: var(--primary);
+  animation: spin 1s linear infinite;
+  margin: 0 auto 2rem;
+  box-shadow: 0 0 15px var(--primary-light);
+}
+
+.status-list {
+  text-align: left;
+  margin: 2rem auto;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.status-icon {
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+.status-pending .status-icon {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+}
+
+[data-theme="light"] .status-pending .status-icon {
+  background: rgba(15, 23, 42, 0.03);
+}
+
+.status-active {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.status-active .status-icon {
+  color: var(--primary);
+}
+
+.status-done {
+  color: var(--success);
+}
+.status-done .status-icon {
+  color: var(--success);
+}
+
+.error-box {
+  display: none;
+  background: var(--danger-light);
+  border: 1px solid var(--danger);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  color: var(--danger);
+  margin-bottom: 2rem;
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | SEO Vision - Auditing Platform</title>
+  <meta name="description" content="Log in to your SEO Vision account to run performance audits, track keyword scores, and access technical SEO audit history.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components/navbar.css">
+  <link rel="stylesheet" href="/assets/css/components/buttons.css">
+  <link rel="stylesheet" href="/assets/css/components/cards.css">
+  <link rel="stylesheet" href="/assets/css/components/forms.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header>
+    <div class="logo-container">
+      <a href="/" class="logo-container">
+        <span class="logo-icon">👁</span>
+        <span class="logo-text">SEO Vision</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <button id="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+    </div>
+  </header>
+
+  <!-- Login Main Panel -->
+  <main class="auth-container">
+    <div class="glass-panel fade-in">
+      <h1 class="form-title">Welcome Back</h1>
+      <p class="form-subtitle">Enter your credentials to access your SEO dashboard</p>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required minlength="8">
+        </div>
+
+        <button type="submit" class="btn-submit" id="submit-btn">Sign In</button>
+      </form>
+
+      <div class="form-footer">
+        Don't have an account? <a href="/pages/register.html">Register here</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script setup -->
+  <script type="module" src="/assets/js/ui.js"></script>
+  <script type="module" src="/assets/js/pages/login.js"></script>
+</body>
+</html>

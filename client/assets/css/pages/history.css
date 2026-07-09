@@ -1,0 +1,101 @@
+.history-controls {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.history-header-title {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.history-header-desc {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.score-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.score-high { background-color: var(--success); box-shadow: 0 0 10px rgba(16, 185, 129, 0.2); }
+.score-mid { background-color: var(--warning); box-shadow: 0 0 10px rgba(245, 158, 11, 0.2); }
+.score-low { background-color: var(--danger); box-shadow: 0 0 10px rgba(239, 68, 68, 0.2); }
+
+.status-pill {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-completed { background: var(--success-light); color: var(--success); }
+.status-failed { background: var(--danger-light); color: var(--danger); }
+.status-running { background: var(--warning-light); color: var(--warning); animation: pulse 1.5s infinite; }
+
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-glass);
+}
+
+.pagination-btn {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: var(--bg-glass-hover);
+  border-color: var(--primary);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.history-url-cell {
+  font-weight: 600;
+  color: var(--text-primary);
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 699px) {
+  .history-controls {
+    grid-template-columns: 1fr;
+  }
+}
