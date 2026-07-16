@@ -67,7 +67,6 @@ exports.crawlUrl = async (url) => {
     const startTime = Date.now();
     
     browser = await puppeteer.launch({
-      executablePath: puppeteer.executablePath(),
       headless: 'shell',
       pipe: true,
       args: [

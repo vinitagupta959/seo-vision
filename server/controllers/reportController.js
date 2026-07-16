@@ -57,7 +57,6 @@ exports.downloadReportPdf = async (req, res, next) => {
     const htmlContent = generatePdfHtml(analysis, analysis.reportId);
 
     browser = await puppeteer.launch({
-      executablePath: puppeteer.executablePath(),
       headless: 'shell',
       pipe: true,
       args: [
