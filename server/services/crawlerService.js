@@ -31,7 +31,7 @@ exports.crawlUrl = async (url) => {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 SEO-Vision-Audit/1.0'
         }
       });
-      
+
       // If HTTPS, validation succeeded
       if (isHttps) isSslValid = true;
 
@@ -65,9 +65,9 @@ exports.crawlUrl = async (url) => {
 
     // 2. Launch Puppeteer to render JavaScript and collect browser timings
     const startTime = Date.now();
-    
+
     browser = await puppeteer.launch({
-      headless: 'shell',
+      headless: true,
       pipe: true,
       args: [
         '--no-sandbox',
