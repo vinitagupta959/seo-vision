@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
-    "build": "mkdir -p puppeteer-cache && npx puppeteer browsers install chrome --path ./puppeteer-cache"
+    "build": "PUPPETEER_CACHE_DIR=/opt/render/project/src/puppeteer-cache npx puppeteer browsers install chrome"
   },
   "dependencies": {
     "axios": "^1.7.2",
